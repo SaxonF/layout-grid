@@ -1,0 +1,184 @@
+.App {
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+body {
+  font-family: -apple-system, system-ui, sans-serif;
+  font-size: 16px;
+  color: #171717;
+}
+
+.grid {
+  position: relative;
+  display: grid;
+  z-index: 10;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex div {
+  flex: 1 1 auto;
+}
+
+.section {
+  position: relative;
+  margin-bottom: 64px;
+}
+
+.block {
+  border-radius: 3px;
+  cursor: pointer;
+  position: relative;
+  border: 2px solid rgba(56, 88, 233, 1);
+  padding: 16;
+  pointer-events: auto;
+  min-height: 200px;
+}
+
+.block.fit {
+  flex: 0 0 auto;
+}
+
+.block.fill {
+  flex: 1 1 auto;
+}
+
+.block.resizing {
+  background: rgba(56, 88, 233, 0.2);
+}
+
+.block:hover .resizer {
+  display: block;
+}
+
+.resizer {
+  display: none;
+}
+
+.resize {
+  right: -5px;
+  bottom: -5px;
+  position: absolute;
+  z-index: 20;
+  background: white;
+  border: 1.5px solid rgba(56, 88, 233, 1);
+  border-radius: 2px;
+  width: 10px;
+  height: 10px;
+  cursor: se-resize;
+}
+
+.tools {
+  left: 8px;
+  top: 8px;
+  position: absolute;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.drag-handle {
+  background: black;
+  color: white;
+  border-radius: 2px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+svg {
+  display: block;
+}
+
+.shadow-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: grid;
+}
+
+.shadow-item {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.shadow-item:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.new-item {
+  background: rgba(56, 88, 233, 0.2);
+}
+
+.add-row {
+  border: none;
+  border-radius: 2px;
+  background: rbga(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 16px 32px;
+  display: block;
+  width: 100%;
+  margin: 8px 0;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.add-block {
+  cursor: pointer;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.03);
+  z-index: 20;
+}
+
+.add-new:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.ToggleGroup {
+  display: inline-flex;
+  background-color: black;
+  border-radius: 2px;
+  color: white;
+}
+
+.ToggleGroupItem {
+  height: 32px;
+  width: 32px;
+  background: none;
+  display: flex;
+  font-size: 15px;
+  line-height: 1;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1px;
+  border: none;
+  color: rgba(255, 255, 255, 0.75);
+}
+.ToggleGroupItem:first-child {
+  margin-left: 0;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+.ToggleGroupItem:last-child {
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+.ToggleGroupItem:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+.ToggleGroupItem[data-state="on"] {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+.ToggleGroupItem:focus {
+  position: relative;
+}
